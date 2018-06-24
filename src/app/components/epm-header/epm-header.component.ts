@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-epm-header',
+  selector: 'epm-header',
   templateUrl: './epm-header.component.html',
   styleUrls: ['./epm-header.component.css']
 })

@@ -1,0 +1,14 @@
+.epm-header {
+    display: flex;
+    position: fixed;
+    height: 50px;
+    border-bottom: 1px solid #8e8787;
+    width: calc(100% - 30px);
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+    top: 0;
+}
+.epm-header__user-name {
+    margin-right: 15px;
+}

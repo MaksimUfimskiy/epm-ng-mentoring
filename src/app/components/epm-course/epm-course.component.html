@@ -1,3 +1,20 @@
-<p>
-  epm-course works!
-</p>
+<div class="epm-course-item">
+    <div class="epm-course-item__content">
+        <div class="epm-course-item__header">
+            <div class="epm-course-item__title">
+                {{course.title}}
+            </div>
+            <div class="epm-course-item__dates">
+                {{duration}}
+                {{course.creationDate | date: 'dd.MM.yyyy'}}
+            </div>
+        </div>
+        <div class="epm-course-item__details">
+            {{course.description}}
+        </div>
+    </div>
+    <div class="epm-course-item__actions">
+        <div><button (click)="editCourse()">Edit</button></div>
+        <div><button (click)="deleteCourse(course.id)">Delete</button></div>
+    </div>
+</div>

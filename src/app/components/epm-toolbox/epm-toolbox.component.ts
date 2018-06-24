@@ -1,15 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-epm-toolbox',
-  templateUrl: './epm-toolbox.component.html',
-  styleUrls: ['./epm-toolbox.component.css']
+    selector: 'epm-toolbox',
+    templateUrl: './epm-toolbox.component.html',
+    styleUrls: ['./epm-toolbox.component.css']
 })
 export class EpmToolboxComponent implements OnInit {
 
-  constructor() { }
+    constructor() { }
 
-  ngOnInit() {
-  }
-
+    ngOnInit() {
+    }
+    public addCourse(): void {
+        console.log('addCourse');
+    }
 }

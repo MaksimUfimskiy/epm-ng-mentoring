@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-epm-logo',
+  selector: 'epm-logo',
   templateUrl: './epm-logo.component.html',
   styleUrls: ['./epm-logo.component.css']
 })

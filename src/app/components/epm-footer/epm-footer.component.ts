@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-epm-footer',
+  selector: 'epm-footer',
   templateUrl: './epm-footer.component.html',
   styleUrls: ['./epm-footer.component.css']
 })

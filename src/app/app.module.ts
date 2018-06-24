@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './components/app.component';
 import { EpmHeaderComponent } from './components/epm-header/epm-header.component';
@@ -10,6 +11,7 @@ import { EpmToolboxComponent } from './components/epm-toolbox/epm-toolbox.compon
 import { EpmSearchComponent } from './components/epm-search/epm-search.component';
 import { EpmCourseComponent } from './components/epm-course/epm-course.component';
 import { EpmCoursesContainerComponent } from './components/epm-courses-container/epm-courses-container.component';
+import { EpmBreadcrumbComponent } from './components/epm-breadcrumb/epm-breadcrumb.component';
 
 @NgModule({
   declarations: [
@@ -21,10 +23,12 @@ import { EpmCoursesContainerComponent } from './components/epm-courses-container
     EpmToolboxComponent,
     EpmSearchComponent,
     EpmCourseComponent,
-    EpmCoursesContainerComponent
+    EpmCoursesContainerComponent,
+    EpmBreadcrumbComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

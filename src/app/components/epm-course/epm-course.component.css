@@ -1,0 +1,38 @@
+.epm-course-item {
+    margin: 5px;
+    border: 1px solid black;
+    display: flex;
+    height: 70px;
+    padding: 15px;
+}
+.epm-course-item__content {
+    width: 100%;
+}
+.epm-course-item__actions {
+    width: 100px;
+    text-align: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.epm-course-item__actions button {
+    width: 80px;
+}
+.epm-course-item__header {
+    height: 25px;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+}
+.epm-course-item__title {
+    width: 100%;
+}
+.epm-course-item__dates {
+    width: 200px;
+}
+.epm-course-item__details {
+    height: 75%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

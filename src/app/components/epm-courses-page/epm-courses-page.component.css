@@ -1,0 +1,13 @@
+.epm-courses-page {
+    margin-top: 50px;
+}
+.epm-courses-page__load-more {
+    margin: 5px;
+    border: 1px solid black;
+    display: flex;
+    height: 10px;
+    padding: 15px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}

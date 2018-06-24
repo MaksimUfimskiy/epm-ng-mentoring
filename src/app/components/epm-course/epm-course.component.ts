@@ -1,15 +1,31 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
+import { ICourse } from '../../data/course';
 
 @Component({
-  selector: 'app-epm-course',
-  templateUrl: './epm-course.component.html',
-  styleUrls: ['./epm-course.component.css']
+    selector: 'epm-course',
+    templateUrl: './epm-course.component.html',
+    styleUrls: ['./epm-course.component.css']
 })
 export class EpmCourseComponent implements OnInit {
 
-  constructor() { }
+    @Input() course: ICourse;
+    @Output() courseDeleted = new EventEmitter<number>();
+    public duration: string;
 
-  ngOnInit() {
-  }
+    constructor() { }
 
+    ngOnInit() {
+        const hours = Math.floor(this.course.duration / 60);
+        if (hours) {
+            this.duration = `${hours}h`;
+        }
+        this.duration = this.duration + ` ${this.course.duration % 60}m`;
+    }
+
+    public editCourse(): void {
+        console.log('editCourse ', this.course.id);
+    }
+    public deleteCourse(id: number): void {
+        this.courseDeleted.emit(id);
+    }
 }
