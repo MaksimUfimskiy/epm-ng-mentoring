@@ -93,8 +93,15 @@ export class EpmCoursesPageComponent implements OnInit {
         console.log('ngOnDestroy');
     }
 
-    public loadMore() {
+    public loadMore(): void {
         console.log('loadMore');
+        this.courses.push({
+            id: Math.floor(Math.random() * 1000000),
+            title: 'Video Course',
+            creationDate: new Date(),
+            duration: Math.floor(Math.random() * 1000),
+            description: 'New description'
+        });
     }
     public onCourseDeleted(id: number): void {
         console.log(`Course with ID: ${id} is deleted`);

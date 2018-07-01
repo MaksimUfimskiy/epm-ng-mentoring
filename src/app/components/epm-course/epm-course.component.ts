@@ -22,8 +22,9 @@ export class EpmCourseComponent implements OnInit {
         this.duration = this.duration + ` ${this.course.duration % 60}m`;
     }
 
-    public editCourse(): void {
+    public editCourse(): ICourse {
         console.log('editCourse ', this.course.id);
+        return this.course;
     }
     public deleteCourse(id: number): void {
         this.courseDeleted.emit(id);
