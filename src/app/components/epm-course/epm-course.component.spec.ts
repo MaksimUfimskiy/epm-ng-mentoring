@@ -27,7 +27,7 @@ describe('EpmCourseComponent', () => {
         component.course = {
             id: 12123,
             title: 'Mock title',
-            creationDate: new Date(),
+            creationDate: new Date('2018-07-01'),
             duration: 13423,
             description: 'Mock description'
         };

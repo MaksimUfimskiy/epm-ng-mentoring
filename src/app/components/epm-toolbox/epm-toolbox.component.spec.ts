@@ -1,8 +1,9 @@
+import { Component } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { EpmToolboxComponent } from './epm-toolbox.component';
-import { EpmSearchComponent } from '../epm-search/epm-search.component';
 import { FormsModule } from '@angular/forms';
+import { MockSearchComponent } from '../../mocks/mock.components';
 
 describe('EpmToolboxComponent', () => {
     let component: EpmToolboxComponent;
@@ -12,7 +13,7 @@ describe('EpmToolboxComponent', () => {
         TestBed.configureTestingModule({
             declarations: [
                 EpmToolboxComponent,
-                EpmSearchComponent
+                MockSearchComponent
             ],
             imports: [
                 FormsModule

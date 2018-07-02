@@ -1,10 +1,9 @@
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
 import { EpmCoursesPageComponent } from './epm-courses-page.component';
-import { EpmBreadcrumbComponent } from '../epm-breadcrumb/epm-breadcrumb.component';
-import { EpmToolboxComponent } from '../epm-toolbox/epm-toolbox.component';
-import { EpmCourseComponent } from '../epm-course/epm-course.component';
-import { EpmSearchComponent } from '../epm-search/epm-search.component';
+import { ICourse } from '../../data/course';
+import { MockBreadCrumbComponent, MockSearchComponent, MockToolboxComponent, MockCourseComponent } from '../../mocks/mock.components';
 
 describe('EpmCoursesPageComponent', () => {
     let component: EpmCoursesPageComponent;
@@ -14,13 +13,10 @@ describe('EpmCoursesPageComponent', () => {
         TestBed.configureTestingModule({
             declarations: [
                 EpmCoursesPageComponent,
-                EpmBreadcrumbComponent,
-                EpmToolboxComponent,
-                EpmCourseComponent,
-                EpmSearchComponent
-            ],
-            providers: [
-                EpmCourseComponent
+                MockBreadCrumbComponent,
+                MockToolboxComponent,
+                MockCourseComponent,
+                MockSearchComponent
             ],
             imports: [
                 FormsModule

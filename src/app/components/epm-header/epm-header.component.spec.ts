@@ -1,8 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { EpmHeaderComponent } from './epm-header.component';
-import { EpmLogoComponent } from '../epm-logo/epm-logo.component';
 import { FormsModule } from '@angular/forms';
+import { Component } from '@angular/core';
+import { MockLogoComponent } from '../../mocks/mock.components';
 
 describe('EpmHeaderComponent', () => {
     let component: EpmHeaderComponent;
@@ -12,7 +13,7 @@ describe('EpmHeaderComponent', () => {
         TestBed.configureTestingModule({
             declarations: [
                 EpmHeaderComponent,
-                EpmLogoComponent
+                MockLogoComponent
             ]
         })
             .compileComponents();
