@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output,  EventEmitter} from '@angular/core';
 
 @Component({
     selector: 'epm-search',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./epm-search.component.css']
 })
 export class EpmSearchComponent implements OnInit {
+    @Output() coursesSearched = new EventEmitter<string>();
     public searchText: string = '';
 
     constructor() { }
@@ -13,6 +14,6 @@ export class EpmSearchComponent implements OnInit {
     ngOnInit() {
     }
     public searchCourses(): void {
-        console.log('searchText', this.searchText);
+        this.coursesSearched.emit(this.searchText);
     }
 }

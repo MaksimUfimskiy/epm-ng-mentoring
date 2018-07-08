@@ -1,11 +1,11 @@
-<div class="epm-course-item">
+<div borderHighlight [courseDate]="course.creationDate" [ngClass]="{'epm-course-item': true, 'epm-course-item--top-rated': course.topRated}">
     <div class="epm-course-item__content">
         <div class="epm-course-item__header">
             <div class="epm-course-item__title">
-                {{course.title}}
+                {{course.title | uppercase}} <span *ngIf="course.topRated">{{icons.star}}</span>
             </div>
             <div class="epm-course-item__dates">
-                {{duration}}
+                {{course.duration | courseDuration}}
                 {{course.creationDate | date: 'dd.MM.yyyy'}}
             </div>
         </div>

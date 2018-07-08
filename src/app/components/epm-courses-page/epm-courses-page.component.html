@@ -1,8 +1,13 @@
 <div class="epm-courses-page">
   <epm-breadcrumb></epm-breadcrumb>
-  <epm-toolbox></epm-toolbox>
-  <div>
-    <epm-course *ngFor="let course of courses" [course]="course" (courseDeleted)="onCourseDeleted($event)"></epm-course>
+  <epm-toolbox (coursesSearched)="onCourseSearched($event)"></epm-toolbox>
+  <div *ngIf="courses.length > 0">
+    <epm-course *ngFor="let course of courses | coursesOrder"  [course]="course" (courseDeleted)="onCourseDeleted($event)"></epm-course>
   </div>
-  <div class="epm-courses-page__load-more" (click)="loadMore()"><span>Load  More</span></div>
+  <div *ngIf="!courses.length" class="epm-courses-page__no-data">
+    <span>No Data. Feel free to add more courses.</span>
+  </div>
+  <div *ngIf="courses.length > 0" class="epm-courses-page__load-more" (click)="loadMore()">
+    <span>Load More</span>
+  </div>
 </div>

@@ -36,3 +36,6 @@
     overflow: hidden;
     text-overflow: ellipsis;
 }
+.epm-course-item--top-rated {
+    background-color: #ffebef;
+}

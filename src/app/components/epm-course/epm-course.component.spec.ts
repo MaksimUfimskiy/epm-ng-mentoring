@@ -24,11 +24,12 @@ describe('EpmCourseComponent', () => {
     beforeEach(() => {
         fixture = TestBed.createComponent(EpmCourseComponent);
         component = fixture.componentInstance;
-        component.course = {
+        component.course = <ICourse>{
             id: 12123,
             title: 'Mock title',
             creationDate: new Date('2018-07-01'),
             duration: 13423,
+            topRated: true,
             description: 'Mock description'
         };
         fixture.detectChanges();
@@ -42,9 +43,7 @@ describe('EpmCourseComponent', () => {
     it('should create', () => {
         expect(component).toBeTruthy();
     });
-    it('should calculate duration string', () => {
-        expect(component.duration).toBeTruthy();
-    });
+
     it('should return edited course', () => {
         const course = component.editCourse();
         expect(component.course).toBe(course);
@@ -55,6 +54,7 @@ describe('EpmCourseComponent', () => {
             id: Math.floor(Math.random() * 1000000),
             title: 'Video Course',
             creationDate: new Date(),
+            topRated: false,
             duration: Math.floor(Math.random() * 1000),
             description: 'New description'
         };
@@ -80,6 +80,7 @@ class TestHostComponent {
         title: 'Video Course',
         creationDate: new Date('01.07.2018'),
         duration: 7777777777777777777,
+        topRated: false,
         description: 'New description'
     };
     deletedCourse: ICourse;

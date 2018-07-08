@@ -1,5 +1,6 @@
 import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
 import { ICourse } from '../../data/course';
+import icons from 'glyphicons';
 
 @Component({
     selector: 'epm-course',
@@ -10,16 +11,13 @@ export class EpmCourseComponent implements OnInit {
 
     @Input() course: ICourse;
     @Output() courseDeleted = new EventEmitter<number>();
-    public duration: string;
+    public icons: any;
 
     constructor() { }
 
     ngOnInit() {
+        this.icons = icons;
         const hours = Math.floor(this.course.duration / 60);
-        if (hours) {
-            this.duration = `${hours}h`;
-        }
-        this.duration = this.duration + ` ${this.course.duration % 60}m`;
     }
 
     public editCourse(): ICourse {

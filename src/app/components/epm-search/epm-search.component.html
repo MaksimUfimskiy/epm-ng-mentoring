@@ -1,4 +1,4 @@
 <div class="epm-course-search">
-    <input  [(ngModel)]="searchText" type="text"/>
+    <input  [(ngModel)]="searchText" (keyup.enter)="searchCourses()" type="text"/>
     <button (click)="searchCourses()">Search</button>
 </div>

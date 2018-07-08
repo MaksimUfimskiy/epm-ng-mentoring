@@ -1,5 +1,7 @@
 .epm-courses-page {
     margin-top: 50px;
+    overflow-y: auto;
+    height: 90vh;
 }
 .epm-courses-page__load-more {
     margin: 5px;
@@ -10,4 +12,13 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
+}
+.epm-courses-page__no-data {
+    margin: 5px;
+    border: 1px solid black;
+    display: flex;
+    height: 10px;
+    padding: 15px;
+    align-items: center;
+    justify-content: center;
 }

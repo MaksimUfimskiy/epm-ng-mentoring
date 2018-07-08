@@ -1,5 +1,6 @@
 .epm-footer {
     position: fixed;
+    background: white;
     bottom: 0;
     border-top: 1px solid lightgrey;
     width: calc(100% - 15px);

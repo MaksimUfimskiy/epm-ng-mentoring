@@ -12,25 +12,32 @@ import { EpmSearchComponent } from './components/epm-search/epm-search.component
 import { EpmCourseComponent } from './components/epm-course/epm-course.component';
 import { EpmCoursesContainerComponent } from './components/epm-courses-container/epm-courses-container.component';
 import { EpmBreadcrumbComponent } from './components/epm-breadcrumb/epm-breadcrumb.component';
+import { BorderHighlightDirective } from './directives/border-highlight-directive/border-highlight.directive';
+import { DuratioPipe } from './pipes/course-duration.pipe';
+import { CoursesOrderPipe } from './pipes/courses-order.pipe';
+import { CoursesSearchPipe } from './pipes/courses-search.pipe';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    EpmHeaderComponent,
-    EpmFooterComponent,
-    EpmLogoComponent,
-    EpmCoursesPageComponent,
-    EpmToolboxComponent,
-    EpmSearchComponent,
-    EpmCourseComponent,
-    EpmCoursesContainerComponent,
-    EpmBreadcrumbComponent
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        EpmHeaderComponent,
+        EpmFooterComponent,
+        EpmLogoComponent,
+        EpmCoursesPageComponent,
+        EpmToolboxComponent,
+        EpmSearchComponent,
+        EpmCourseComponent,
+        EpmCoursesContainerComponent,
+        EpmBreadcrumbComponent,
+        BorderHighlightDirective,
+        DuratioPipe,
+        CoursesOrderPipe
+    ],
+    imports: [
+        BrowserModule,
+        FormsModule
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
