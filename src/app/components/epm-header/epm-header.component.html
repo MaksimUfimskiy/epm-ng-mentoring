@@ -1,7 +1,8 @@
 <div class="epm-header">
     <epm-logo></epm-logo>
     <div class="epm-header__auth">
-        <span class="epm-header__user-name">User login</span>
-        <button>Log off</button>
+        <span *ngIf="isUserLogged" class="epm-header__user-name">{{userLogin}}</span>
+        <button *ngIf="isUserLogged" (click)="logoffUser()">Log off</button>
+        <button *ngIf="!isUserLogged" (click)="loginUser()">Log in</button>
     </div>
 </div>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ICourse } from '../../data/course';
 import { CoursesSearchPipe } from '../../pipes/courses-search.pipe';
+import { CoursesService } from '../../services/courses.service';
 
 @Component({
     selector: 'epm-courses-page',
@@ -14,30 +15,25 @@ export class EpmCoursesPageComponent implements OnInit {
     public allCourses: ICourse[];
     searchText: string;
 
-    constructor(private searchCourses: CoursesSearchPipe) {
+    constructor(private searchCourses: CoursesSearchPipe, private coursesService: CoursesService) {
         this.courses = [];
     }
 
     ngOnInit() {
-        console.log('ngOnInit EpmCoursesPageComponent');
-        this.courses = this.getMockData();
+        this.courses = this.coursesService.getCourses();
         this.allCourses = Object.assign([], this.courses);
     }
  
     public loadMore(): void {
-        console.log('loadMore');
-        this.allCourses.push({
-            id: Math.floor(Math.random() * 1000000),
-            title: 'Video Course',
-            creationDate: this.randomDate(new Date(2018, 5, 1), new Date(2018, 7, 1)),
-            duration: Math.floor(Math.random() * 1000),
-            topRated: !!Math.round(Math.random()),
-            description: 'New description'
-        });
+        this.allCourses = this.coursesService.createCourse();
         this.filterCourses();
     }
     public onCourseDeleted(id: number): void {
-        console.log(`Course with ID: ${id} is deleted`);
+        const confirmed = confirm('Do you really want to delete this course?');
+        if (confirmed) {
+            this.allCourses = this.coursesService.removeCourse(id);
+            this.filterCourses();
+        }
     }
     public onCourseSearched(searchText: string): void {
         this.searchText = searchText;
@@ -49,71 +45,5 @@ export class EpmCoursesPageComponent implements OnInit {
         } else {
             this.courses = this.allCourses;
         }
-    }
-    private randomDate(start, end): Date {
-        return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
-    }
-    private getMockData(): ICourse[] {
-        return [
-            {
-                id: 0,
-                title: 'Spring Java Course 1',
-                creationDate: this.randomDate(new Date(2018, 5, 1), new Date(2018, 7, 1)),
-                duration: 85,
-                topRated: !!Math.round(Math.random()),
-                description: 'description description description description description description description description description '
-            },
-            {
-                id: 1,
-                title: 'Angular Course 2',
-                creationDate: this.randomDate(new Date(2018, 5, 1), new Date(2018, 7, 1)),
-                duration: 78,
-                topRated: !!Math.round(Math.random()),
-                description: 'description description description description description description description description description '
-            },
-            {
-                id: 2,
-                title: 'React Course 3',
-                creationDate: this.randomDate(new Date(2018, 5, 1), new Date(2018, 7, 1)),
-                duration: 85,
-                topRated: !!Math.round(Math.random()),
-                description: 'description description description description description description description description description '
-            },
-            {
-                id: 3,
-                title: 'Vue Course 4',
-                creationDate: this.randomDate(new Date(2018, 5, 1), new Date(2018, 7, 1)),
-                duration: 78,
-                topRated: !!Math.round(Math.random()),
-                description: 'description description description description description description description description description '
-            },
-            {
-                id: 4,
-                title: 'D3JS Course 5',
-                creationDate: this.randomDate(new Date(2018, 5, 1), new Date(2018, 7, 1)),
-                duration: 78,
-                topRated: !!Math.round(Math.random()),
-                description: 'description description description description description description description description description '
-            },
-            {
-                id: 5,
-                title: 'NodeJS Course 6',
-                creationDate: this.randomDate(new Date(2018, 5, 1), new Date(2018, 7, 1)),
-                duration: 85,
-                topRated: !!Math.round(Math.random()),
-                description: `description description description description description description description description description 
-                    description description description description description description description description description 
-                    description description description description description description description description description description description description description description description description description description 
-                    description description description description description description description description description `
-            },
-            {
-                id: 6,
-                title: 'Python Course 7',
-                creationDate: this.randomDate(new Date(2018, 5, 1), new Date(2018, 7, 1)),
-                duration: 78,
-                topRated: !!Math.round(Math.random()),
-                description: 'description description description description description description description description description '
-            }
-        ];
     }
 }

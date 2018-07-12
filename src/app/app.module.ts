@@ -15,7 +15,7 @@ import { EpmBreadcrumbComponent } from './components/epm-breadcrumb/epm-breadcru
 import { BorderHighlightDirective } from './directives/border-highlight-directive/border-highlight.directive';
 import { DuratioPipe } from './pipes/course-duration.pipe';
 import { CoursesOrderPipe } from './pipes/courses-order.pipe';
-import { CoursesSearchPipe } from './pipes/courses-search.pipe';
+import { LoginComponent } from './components/login-page/login-page.component';
 
 @NgModule({
     declarations: [
@@ -31,7 +31,8 @@ import { CoursesSearchPipe } from './pipes/courses-search.pipe';
         EpmBreadcrumbComponent,
         BorderHighlightDirective,
         DuratioPipe,
-        CoursesOrderPipe
+        CoursesOrderPipe,
+        LoginComponent
     ],
     imports: [
         BrowserModule,

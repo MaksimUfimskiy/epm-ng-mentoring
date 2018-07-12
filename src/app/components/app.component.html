@@ -1,6 +1,7 @@
 <div class="epm-app">
-    <epm-header></epm-header>
-    <epm-courses-page></epm-courses-page>
+    <epm-header (userLogging)="logUser($event)" [loginPageVisible]="showLoginPage"></epm-header>
+    <epm-courses-page *ngIf="!showLoginPage"></epm-courses-page>
+    <epm-login *ngIf="showLoginPage" (userLogging)="logUser($event)"></epm-login>
     <epm-footer></epm-footer>
 </div>
 
